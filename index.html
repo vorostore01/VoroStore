@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VORO — هودي فاخر</title>
+  <meta name="description" content="VORO — هودي فاخر. اطلب عبر واتساب. تصميم فخم ومتجاوب." />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container top-inner">
+      <div class="brand">
+        <img src="image/logo.png.png" alt="VORO Logo" class="logo">
+        <span class="image/logo.png.png"></span>
+      </div>
+
+      <div class="top-actions">
+        <div class="search-wrap" role="search" aria-label="بحث">
+          <input id="searchInput" placeholder="ابحث عن منتج..." aria-label="ابحث عن منتج">
+        </div>
+
+        <div class="lang-wrap" role="tablist" aria-label="language switch">
+          <button class="lang-btn active" data-lang="ar">عربي</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button id="cartBtn" class="icon-btn" aria-label="سلة التسوق" title="سلة التسوق">
+          🛍
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="home-link" href="#home" aria-label="العودة للرئيسية">
+        <img src="image/logo.png.png" alt="VORO" class="brand-logo">
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="القائمة الرئيسية">
+        <a href="#product" data-i18n="nav_product">المنتج</a>
+        <a href="#about" data-i18n="nav_about">عن VORO</a>
+        <a href="#reviews" data-i18n="nav_reviews">آراء العملاء</a>
+        <a href="#contact" data-i18n="nav_contact">تواصل</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#product" class="btn btn-gold" data-i18n="shop_now">تسوق الآن</a>
+        <button id="menuToggle" class="menu-toggle" aria-label="قائمة الجوال">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / SLIDER -->
+  <section id="home" class="hero">
+    <div class="hero-slider" aria-live="polite">
+      <div class="slide active">
+        <img src="image/logo.png.png" alt="هودي VORO - صورة رئيسية">
+        <div class="slide-caption">
+          <h1>هودي VORO — لمسة فخامة بسيطة</h1>
+          <p>قَصّة عصرية، خامات منتقاة، وتفاصيل ذهبية.</p>
+          <div class="hero-ctas">
+            <a href="#product" class="btn btn-gold">اطلب الآن</a>
+            <a href="#about" class="btn btn-outline">المزيد عن العلامة</a>
+          </div>
+        </div>
+      </div>
+      <!-- يمكن إضافة سلايدات إضافية هنا -->
+    </div>
+    <div class="slider-controls">
+      <button id="prevSlide" aria-label="السابق">‹</button>
+      <button id="nextSlide" aria-label="التالي">›</button>
+    </div>
+  </section>
+
+  <!-- PRODUCT (Single: Hoodie) -->
+  <main>
+    <section id="product" class="product container">
+      <div class="product-grid">
+        <figure class="product-media" role="img" aria-label="صورة الهودي">
+          <span class="sale-badge">خصم</span>
+          <img src="image/hoodie.jpg.png" alt="هودي VORO">
+        </figure>
+
+        <div class="product-info">
+          <h2 class="product-name">هودي VORO</h2>
+          <p class="short-desc">هودي أنيق بتصميم محتشم مع لمسات فاخرة وخامة ناعمة تدوم.</p>
+
+          <div class="price-row" aria-hidden="false">
+            <span class="old-price">5500 د.ج</span>
+            <span class="new-price">4600 د.ج</span>
+            <span class="percent">-16%</span>
+          </div>
+
+          <form id="orderForm" class="order-form" onsubmit="return false;" aria-label="نموذج الطلب">
+            <label for="size">المقاس</label>
+            <select id="size" required>
+              <option value="" disabled selected>اختر المقاس</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+
+            <label for="qty">الكمية</label>
+            <div class="qty">
+              <button type="button" onclick="changeQty(-1)" aria-label="نقص">−</button>
+              <input id="qty" type="number" min="1" value="1" aria-live="polite">
+              <button type="button" onclick="changeQty(1)" aria-label="زيادة">+</button>
+            </div>
+
+            <label for="fullName">الاسم الكامل</label>
+            <input id="fullName" type="text" required placeholder="أدخل اسمك الكامل">
+
+            <label for="phone">رقم الهاتف</label>
+            <input id="phone" type="tel" required placeholder="مثال: 0555xxxxxx">
+
+            <label for="wilaya">الولاية</label>
+            <input id="wilaya" type="text" required placeholder="مثلاً: الجزائر">
+
+            <label for="baladia">البلدية</label>
+            <input id="baladia" type="text" required placeholder="مثلاً: بئر مراد رايس">
+
+            <label for="note">ملاحظة (اختياري)</label>
+            <textarea id="note" rows="3" placeholder="ملاحظات للتوصيل..."></textarea>
+
+            <div class="form-actions">
+              <button id="orderCOD" class="btn btn-gold" type="button">اطلب الآن — الدفع عند الاستلام</button>
+              <button id="orderWhats" class="btn btn-outline" type="button">مشاركة عبر واتساب</button>
+            </div>
+            <p class="small muted">نحتفظ بمعلوماتك للتواصل بخصوص الطلب فقط.</p>
+          </form>
+
+          <div class="extra-info">
+            <div><strong>التوصيل:</strong> داخل الجزائر</div>
+            <div><strong>سياسة الإرجاع:</strong> خلال 7 أيام بعد الاستلام (شروط مطبقة)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about container">
+      <div class="about-grid">
+        <div class="about-media"><img src="image/logo.png" alt="VORO"></div>
+        <div class="about-text">
+          <h3>عن VORO</h3>
+          <p>
+            VORO براند جزائري يقدّم فخامة بسيطة — تصاميم أنيقة مصنوعة بخبرة ومواد منتقاة. نؤمن أن الأناقة تبدأ من التفاصيل
+          </p>
+          <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERS (Countdown) -->
+    <section class="offers container">
+      <div class="offer-card">
+        <h4>عرض خاص — تخفيض 16%</h4>
+        <p>انتهز الفرصة قبل انتهاء العرض:</p>
+        <div id="countdown" class="countdown" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="reviews container">
+      <h3>آراء العملاء</h3>
+      <div class="reviews-grid">
+        <blockquote class="review">
+          <p>“الجودة ممتازة والتوصيل سريع — أنصح بها.”</p>
+          <cite>— عمار</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p>“فيت رائع والخامة ممتازة.”</p>
+          <cite>— ليلى</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p>“خدمة محترفة والأسعار مناسبة.”</p>
+          <cite>— ياسين</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container">
+      <h3>تواصل معنا</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>الهاتف</h4>
+          <p class="big">0555983406</p>
+          <a id="directWhats" class="btn btn-whatsapp" target="_blank" rel="noopener">تواصل واتساب</a>
+        </div>
+        <div class="contact-card">
+          <h4>العنوان</h4>
+          <p>الجزائر — خدمة توصيل داخل الوطن</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="image/logo.png" alt="VORO" class="footer-logo">
+      </div>
+      <div class="footer-right">
+        <p>© <span id="year"></span> VORO - جميع الحقوق محفوظة للمالك</p>
+        <p><a href="#" id="showPrivacy">سياسة الخصوصية</a> · <a href="#" id="showTerms">الشروط</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a id="whatsappFloating" class="whatsapp-fab" aria-label="واتساب">💬</a>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button id="closeModal" class="modal-close" aria-label="إغلاق">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
