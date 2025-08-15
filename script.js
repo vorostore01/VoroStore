@@ -1,7 +1,7 @@
 /* ========= CONFIG ========= */
-const PHONE_LOCAL = '0555983406';      // يظهر للمستخدم
-const PHONE_INT = '213555983406';      // لِ wa.me (بدون صفر البداية)
-const PRICE_UNIT = 4600;
+const PHONE_LOCAL = '0555377154';      // يظهر للمستخدم
+const PHONE_INT = '213555377154';      // لِ wa.me (بدون صفر البداية)
+const PRICE_UNIT = 4500;
 const PRICE_OLD = 5500;
 
 /* ========= DOM HELPERS ========= */
